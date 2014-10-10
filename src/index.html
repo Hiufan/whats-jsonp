@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+	<title>jsonp test</title>
+	<script src="zepto.min.js"></script>
+</head>
+<body>
+	<h1>jsonp test</h1>
+
+	<script>
+		$.get('/tasks', function (data){
+			console.log(data);
+		});
+
+		$.ajax({
+             url: '/jsonp',
+             dataType: "jsonp",
+             jsonp: "callback",
+             success: function(data){
+                 console.log(data)
+             }
+        });
+	</script>
+	<!-- 原生jsonp -->
+	<script>
+		function callbackHandle (data){
+			console.log('this is my jsonp');
+			console.log(data);
+		}
+
+		var script = document.createElement('script');
+		script.src = '/jsonp?callback=callbackHandle';
+		document.body.insertBefore(script, document.body.firstChild);
+
+
+	</script> 
+
+</body>
+</html>

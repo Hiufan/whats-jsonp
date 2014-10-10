@@ -1,0 +1,22 @@
+{
+    "name": "jsonp",
+    "version": "0.0.0",
+    "description": "my node server",
+    "main": "",
+    "dependencies": {},
+    "devDependencies": {
+        "express": ">=3.3.4"
+    },
+    "scripts": {
+        "test": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "https"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/xiaokaike"
+    }
+}
