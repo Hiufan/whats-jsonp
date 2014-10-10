@@ -17,14 +17,15 @@ app.get('/tasks', function (request, response) {
     response.json({tasks: 'cccc'});
 });
 
-
+// jsonp 后端
 app.get('/jsonp', function (request, response){
 
 	console.log(request.query.callback);
-
+	// 获取callback 函数名称
 	var callback = request.query.callback,
 		resData = callback + '({"name": "xiao"})';
-		
+	
+	// 返回data
 	response.send(resData);
 	response.end();
 });
